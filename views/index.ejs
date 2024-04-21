@@ -1,0 +1,57 @@
+<%- include('partials/header.ejs'); -%>
+
+<% 
+    if(locals.data){ %>
+        
+        <div id="sortby">
+            <h3>Sort by:</h3>
+            <form action="/">
+                <button class="sort">Newest</button>
+            </form>
+            <form action="/title">
+                <button class="sort">Title</button>
+            </form>
+        </div>
+
+        
+        <% data.forEach(function(data) { %>
+        <form class="block" action="/all" method="post" id="<%= data.id %>">
+            <% %>
+            <img src="https://covers.openlibrary.org/b/isbn/<%= data.isbn %>-M.jpg">
+            <h2><%= data.name %></h2>
+            <% const date = data.date.toString();
+                const d = date.substring(4,15);  %>
+            <h4>Date read: <%= d %></h4>
+            <% 
+            var review;
+            var isTrue;
+            if(data.review.length > 2000){
+                review = data.review.substring(0, 2000);
+                isTrue = true;
+            } else {
+                review = data.review;
+                isTrue = false;
+            }
+            
+            if (isTrue == true) { %>
+                <p><%= review %>...</p>
+                <button type="submit" name="id" value="<%= data.id %>" id="read-more" class="sort">Read more</button>
+                </form>
+         <% } else { %>
+            <p><%= review %></p>
+            </form>
+         <% }  %>  
+        
+      <% }); 
+    } else if (locals.error){
+        console.log(error); %>
+        <h2><%= error %></h2>
+    <% } else {
+        console.log("Unknown error"); %>
+        <h2>Error! Refresh and try again please!</h2>
+<%  }  %>
+
+
+    
+
+<%- include('partials/footer.ejs'); -%>

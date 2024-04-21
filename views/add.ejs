@@ -1,0 +1,25 @@
+<%- include('partials/header.ejs'); -%>
+<% if(locals.notFound) {%>
+    <h2 id="not-found"><%= notFound %></h2>
+    <div class="align">
+        <form action="/add" method="post" class="new">
+            <input type="text" name="add" value ="<%= name %>"placeholder="Enter book name" oninvalid="this.setCustomValidity(`Book name field can't be empty!`)" oninput="setCustomValidity('')" id="book-name" required>
+            <textarea placeholder="Write your review here!" name="review" value="review" id="review-area" oninvalid="this.setCustomValidity(`Book review field can't be empty!`)" oninput="setCustomValidity('')"  required><%= review %></textarea>
+            <input type="submit" class="confirm">
+        </form>
+    </div>
+        
+    
+<% } else {%>
+    <div class="align">
+        <form action="/add" method="post" class="new">
+            <input type="text" name="add" placeholder="Enter book name" oninvalid="this.setCustomValidity(`Book name field can't be empty!`)" oninput="setCustomValidity('')" autocomplete="off" id="book-name" required>
+            <textarea placeholder="Write your review here!" name="review" value="review" id="review-area" oninvalid="this.setCustomValidity(`Book review field can't be empty!`)" oninput="setCustomValidity('')"autocomplete="off" required></textarea>
+            <input type="submit" class="confirm">
+        </form>
+    </div>
+        
+    
+<% } %>
+
+<%- include('partials/footer.ejs'); -%>

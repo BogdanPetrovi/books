@@ -1,0 +1,175 @@
+* {
+    margin:0;
+    padding: 0;
+    cursor: default;
+}
+
+body{
+    background-color:#FBFFDC;
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    min-width: 800px;
+    min-height: 400px;
+}
+
+
+/* header */
+.header {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #98EECC;
+    /* position: fixed;
+    top:0;
+    width: 100%; */
+}
+
+h1 {
+    color:#A4907C;
+    font-size: 38px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-style: italic;
+}
+
+#new {
+    border: none;
+    font-size: 30px;
+    font-family: "Sedan", serif;
+    background-color: #98EECC;
+    padding: 15px;
+    color:#A4907C;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+h1:hover, #new:hover{
+    color: black;
+}
+
+/* sort by */
+
+#sortby {
+    margin: 10px 15% 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+.sort {
+    background-color: #FBFFDC;
+    font-family: "Sedan", serif;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sort:hover {
+    color: #A4907C;
+}
+
+
+/* content */
+img {
+    float: left;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+p {
+    padding-top: 10px;
+}
+
+.block {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    width: 70%;
+}
+
+#read-more {
+    position:absolute;
+    right: 15%;
+    color:#88a17c;
+}
+
+#read-more:hover{
+color:#A4907C;
+}
+
+/* new */
+.align {
+    width: 65%;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+#book-name {
+    background-color: #FBFFDC;
+    border: none;
+    font-size: 32px;
+    cursor:text;
+    font-family: "Sedan", serif;
+}
+
+#review-area {
+    cursor: text;
+    background-color:#FBFFDC;
+    font-size: 22px;
+    border: none;
+    font-family: "Sedan", serif;
+}
+
+.confirm {
+    cursor: pointer;
+    background-color: #98EECC;
+    border: none;
+    border-radius: 10%;
+    font-size: 28px;
+    width: 30%;
+    align-self: center;
+}
+
+#not-found {
+    width: fit-content;
+    font-size: 32px;
+    margin: 20px auto;
+}
+
+/* all */
+.whole-review {
+    width: 70%;
+    margin: 20px auto;
+}
+
+footer {
+    background-color: #98EECC;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

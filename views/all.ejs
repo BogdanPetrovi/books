@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs'); -%>
+    <div class="whole-review">
+        <img src="https://covers.openlibrary.org/b/isbn/<%= data[0].isbn %>-M.jpg">
+        <h2><%= data[0].name %></h2>
+        <% const date = data[0].date.toString();
+        const d = date.substring(4,15);  %>
+        <h4>Date read: <%= d %></h4>
+        <p><%= data[0].review %></p>
+        <button id="back" class="sort" style="width:100%; margin:20px auto;">Go back</button>
+    </div>
+    
+    <% console.log(data[0].review); %>
+
+<%- include('partials/footer.ejs'); -%>
